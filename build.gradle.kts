@@ -9,6 +9,18 @@ buildscript {
     }
 }
 
+plugins {
+  id("org.sonarqube") version "3.3"
+}
+
+sonarqube {
+  properties {
+    property("sonar.projectKey", "flawedworld_GmsCompat")
+    property("sonar.organization", "flawedworld")
+    property("sonar.host.url", "https://sonarcloud.io")
+  }
+}
+
 allprojects {
     tasks.withType<JavaCompile> {
         val compilerArgs = options.compilerArgs
